@@ -206,8 +206,7 @@ class DbHelper:
         """
         if not source_path or not source_filename or not dest_path or not dest_filename:
             return False
-        ret = self._db.query(TRANSFERHISTORY).filter(TRANSFERHISTORY.SOURCE_PATH == source_path,
-                                                     TRANSFERHISTORY.SOURCE_FILENAME == source_filename,
+        ret = self._db.query(TRANSFERHISTORY).filter(
                                                      TRANSFERHISTORY.DEST_PATH == dest_path,
                                                      TRANSFERHISTORY.DEST_FILENAME == dest_filename).count()
         return True if ret > 0 else False

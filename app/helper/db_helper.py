@@ -1088,7 +1088,7 @@ class DbHelper:
         """
         if not path:
             return False
-        count = self._db.query(SYNCHISTORY).filter(SYNCHISTORY.PATH == os.path.normpath(path),
+        count = self._db.query(SYNCHISTORY).filter(
                                                    SYNCHISTORY.DEST == os.path.normpath(dest)).count()
         if count > 0:
             return True
